@@ -1,9 +1,8 @@
 import { Suspense } from 'react';
-import { BrowserRouter, Routes, Route, NavLink, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, NavLink, Navigate, Outlet } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 
 import { routes } from './routes';
-
 import logo from '../assets/react.svg';
 
 export const Navigation = () => {
@@ -33,12 +32,23 @@ export const Navigation = () => {
           </nav>
 
           <Routes>
-            {routes.map(({ path, component: Component }) => (
+            {routes.map(({ path, component: Component, children }) => (
               <Route
                 key={uuid()}
                 path={path}
                 element={<Component />}
-              />
+              >
+                {children &&
+                  children.map(({ path, component: Component }) => {
+                    return (
+                      <Route
+                        key={uuid()}
+                        path={path}
+                        element={<Component />}
+                      />
+                    );
+                  })}
+              </Route>
             ))}
 
             <Route
