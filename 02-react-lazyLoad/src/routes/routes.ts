@@ -19,7 +19,7 @@ const LazyPage3 = lazy(() => import('../01-lazyload/pages/LazyPage3'));
 
 export const routes: Array<RouteType> = [
   {
-    path: 'lazyload',
+    path: 'lazyload/*',
     component: lazy(() => import('../01-lazyload/layout/LazyLayout')),
     name: 'LazyLoading Nested',
     children: routesNested,
