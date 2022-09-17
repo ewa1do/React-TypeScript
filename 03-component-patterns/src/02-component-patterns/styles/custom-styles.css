@@ -1,0 +1,22 @@
+.bg-dark {
+  background-color: rgb(56, 56, 56);
+}
+
+.text-white {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.custom-image {
+  border-radius: 20px;
+  padding: 10px;
+  width: calc(100% - 20px);
+}
+
+.custom-buttons > * {
+  border-color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8);
+}
